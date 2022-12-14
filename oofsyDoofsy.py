@@ -74,6 +74,10 @@ elif backup == "N" or backup == "n":
         print("Oops! The file you selected is not an .ogg file! Please try again.")
         time.sleep(0.7)
         exit(1)
+    if oggcheck == None:
+        print("You havent selected anything! Exiting...")
+        time.sleep(1)
+        exit(1)
     else:
         print("Done! The new 'ouch.ogg' file has been selected! Renaming...")
         if os.path.exists(directory + 'ouch.ogg'):
