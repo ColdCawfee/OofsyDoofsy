@@ -15,21 +15,21 @@ except ImportError:
     time.sleep(0.5)
     os.system("cls")
 import psutil
-print("Checking for Roblox installation...")
-time.sleep(0.5)
-if not os.path.exists(os.environ['LOCALAPPDATA'] + '/Roblox'):
-    print("Oops! You dont seem to have Roblox installed! Without it, this script cannot continue!")
-    time.sleep(1)
-    exit(1)
-else:
-    print("Found installation!")
-    time.sleep(1)
-    os.system("cls")
+#print("Checking for Roblox installation...")
+#time.sleep(0.5)
+#directory = os.environ['LOCALAPPDATA'] + '/Roblox/Verions/version-*/content'
+#for directory in glob.glob(os.environ['LOCALAPPDATA'] + '/Roblox/Versions/version-*/content'):
+#    if not os.path.exists(directory):
+#        print("Oops! You dont seem to have Roblox installed! Without it, this script cannot continue!")
+#        time.sleep(1)
+#        exit(1)
+#else:
+#    print("Found installation!")
+#    time.sleep(1)
+#    os.system("cls")
 print("It is recommended that you backup the current 'ouch.ogg' file before continuing in case this ever breaks!")
 print("Would you like to backup the file? (Y/n)")
 backup = input()
-
-
 if backup == "Y" or backup == "y" or backup == "":
     print("Backing up file...")
     time.sleep(0.5)
@@ -44,6 +44,10 @@ if backup == "Y" or backup == "y" or backup == "":
     if not oggcheck.endswith(".ogg"):
         print("Oops! The file you selected is not an .ogg file! Please try again.")
         time.sleep(0.7)
+        exit(1)
+    if oggcheck == None:
+        print("You havent selected anything! Exiting...")
+        time.sleep(1)
         exit(1)
     else:
         print("Done! The new 'ouch.ogg' file has been selected! Renaming...")
